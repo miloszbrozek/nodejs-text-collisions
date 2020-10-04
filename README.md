@@ -32,15 +32,13 @@ Once all operations are normalized it is easier to combine 2 colliding edits int
 | insert     | move       | insert goes first, move awaits for another operation                              |
 | move       | move       | move                                                                              |
 
-Sample edit collision that gives different results depending on the direction of combine:
+Sample edit collision that gives different results depending on the direction of combine:  
 
-Operation1: ```[{move: 1}, {insert: 'ABC'}, {move: 3}, {insert: "UW"}]```
-Operation2: ```[{move: 1}, {insert: 'XYZ'}, {move: 3}, {delete: 2}]```
+Operation1: ```[{move: 1}, {insert: 'ABC'}, {move: 3}, {insert: "UW"}]```  
+Operation2: ```[{move: 1}, {insert: 'XYZ'}, {move: 3}, {delete: 2}]```  
 
-operation1 combined with operation2: ```[{move: 1}, {insert: "ABCXYZ"}, {move: 3}, {delete: 2}, {insert: "UW"}]```
-
-operation2 combined with operation1: ```[{move: 1}, {insert: "XYZABC"}, {move: 3}, {delete: 2}, {insert: "UW"}]```
-
+operation1 combined with operation2: ```[{move: 1}, {insert: "ABCXYZ"}, {move: 3}, {delete: 2}, {insert: "UW"}]```  
+operation2 combined with operation1: ```[{move: 1}, {insert: "XYZABC"}, {move: 3}, {delete: 2}, {insert: "UW"}]```  
 ## Project setup
 ```
 yarn install
